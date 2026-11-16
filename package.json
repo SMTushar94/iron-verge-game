@@ -5,11 +5,12 @@
   "description": "IRON VERGE - 2D side-stepping run-and-gun live-service mobile game",
   "main": "index.js",
   "scripts": {
-    "typecheck": "tsc --noEmit",
-    "build:demo": "node scripts/build-demo.mjs",
-    "dev:demo": "python3 -m http.server 8080 --bind 0.0.0.0",
+    "typecheck": "node scripts/typecheck.mjs",
     "test": "node scripts/run-tests.mjs",
-    "smoke": "node tests/browser-smoke.mjs"
+    "demo": "node scripts/serve.mjs",
+    "snapshot": "node scripts/snapshot-frames.mjs && python3 scripts/rasterize-frames.py build/snapshots/frames.json build/snapshots/{}.png 0.6",
+    "analyze": "node scripts/analyze.mjs",
+    "smoke": "node scripts/run-tests.mjs"
   },
   "dependencies": {
     "zustand": "^5.0.2"

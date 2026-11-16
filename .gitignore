@@ -1,0 +1,6 @@
+# generated test harness output
+build/
+node_modules/
+# python bytecode from the rasterizer
+__pycache__/
+*.pyc

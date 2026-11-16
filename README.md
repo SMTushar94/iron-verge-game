@@ -1,5 +1,23 @@
 # IRON VERGE — 2D side-stepping run-and-gun (live-service mobile game)
 
+> **⚠️ Status check (2026-11-16).** This repository currently contains the
+> **single-file playable demo** (`IRON-VERGE-playable-demo.html`) and the docs.
+> The `src/`, `web/`, `tests/` and `docs/screenshots/` trees described below are
+> **not present in this checkout**, so the commands in §1 and the table in §4 do
+> not run as documented. What *does* work — verified — is at the top of
+> **[ANALYSIS.md](ANALYSIS.md)**:
+>
+> ```bash
+> npm install --legacy-peer-deps
+> npm test          # 43 tests against the shipped engine
+> npm run typecheck # bundle parses, every DOM id resolves, stays offline
+> npm run analyze   # regenerates the balance/economy numbers
+> npm run demo      # http://localhost:8080/  ← playable
+> ```
+>
+> See **ANALYSIS.md** for the test report, 8 confirmed defects and the roadmap.
+> The sections below describe the intended production architecture.
+
 Production-ready, fully typed TypeScript architecture for an iOS/Android
 run-and-gun, plus a **playable, self-contained browser demo driven by the exact
 same engine, state store and service contracts**.
